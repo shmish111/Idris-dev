@@ -1,0 +1,59 @@
+load("@rules_idris//idris:rules_idris.bzl", "idris_library")
+
+idris_library (
+    name = "base",
+    deps = ["//prelude:prelude"],
+    strip_prefix = "base/",
+    opts = "--nobasepkgs --total --partial-eval",
+    srcs = [ "Control/Arrow.idr"
+           , "Control/Catchable.idr"
+           , "Control/Category.idr"
+           , "Control/IOExcept.idr"
+           , "Control/Isomorphism.idr"
+
+           , "Control/Monad/Identity.idr"
+           , "Control/Monad/Reader.idr"
+           , "Control/Monad/RWS.idr"
+           , "Control/Monad/State.idr"
+           , "Control/Monad/Trans.idr"
+           , "Control/Monad/Writer.idr"
+
+           , "Data/Bits.idr"
+           , "Data/Buffer.idr"
+           , "Data/Complex.idr"
+           , "Data/Erased.idr"
+           , "Data/Fin.idr"
+           , "Data/HVect.idr"
+           , "Data/IORef.idr"
+
+           , "Data/List.idr"
+           , "Data/List/Quantifiers.idr"
+           , "Data/List/Views.idr"
+
+           , "Data/Mod2.idr"
+           , "Data/Morphisms.idr"
+           , "Data/Nat/Views.idr"
+           , "Data/Primitives/Views.idr"
+           , "Data/So.idr"
+
+           , "Data/String.idr"
+           , "Data/String/Views.idr"
+
+           , "Data/Vect.idr"
+           , "Data/Vect/Quantifiers.idr"
+           , "Data/Vect/Views.idr"
+
+           , "Debug/Error.idr"
+           , "Debug/Trace.idr"
+
+           , "Language/Reflection/Utils.idr"
+
+           , "Syntax/PreorderReasoning.idr"
+
+           , "System.idr"
+           , "System/Concurrency/Channels.idr"
+           , "System/Concurrency/Raw.idr"
+           , "System/Info.idr"
+           ],
+    visibility = ["//visibility:public"],
+)

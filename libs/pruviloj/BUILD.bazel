@@ -1,0 +1,10 @@
+load("@rules_idris//idris:rules_idris.bzl", "idris_library")
+
+idris_library (
+    name = "effects",
+    deps = ["//prelude:prelude"],
+    opts = "--nobasepkgs --partial-eval",
+    strip_prefix = "pruviloj/",
+    srcs = native.glob(["**/*.idr"]),
+    visibility = ["//visibility:public"],
+)

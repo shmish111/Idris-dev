@@ -1,0 +1,48 @@
+load("@rules_idris//idris:rules_idris.bzl", "idris_library")
+
+idris_library (
+    name = "prelude",
+    deps = [],
+    opts = "--nobuiltins --total --partial-eval",
+    strip_prefix = "prelude/",
+    srcs = [ "Builtins.idr"
+
+           , "Decidable/Equality.idr"
+
+           , "IO.idr"
+
+           , "Language/Reflection.idr"
+           , "Language/Reflection/Elab.idr"
+           , "Language/Reflection/Errors.idr"
+
+           , "Prelude.idr"
+
+           , "Prelude/Algebra.idr"
+           , "Prelude/Applicative.idr"
+           , "Prelude/Basics.idr"
+           , "Prelude/Bits.idr"
+           , "Prelude/Bool.idr"
+           , "Prelude/Cast.idr"
+           , "Prelude/Chars.idr"
+           , "Prelude/Doubles.idr"
+           , "Prelude/Either.idr"
+           , "Prelude/File.idr"
+           , "Prelude/Foldable.idr"
+           , "Prelude/Functor.idr"
+           , "Prelude/Interactive.idr"
+           , "Prelude/Interfaces.idr"
+           , "Prelude/List.idr"
+           , "Prelude/Maybe.idr"
+           , "Prelude/Monad.idr"
+           , "Prelude/Nat.idr"
+           , "Prelude/Pairs.idr"
+           , "Prelude/Providers.idr"
+           , "Prelude/Show.idr"
+           , "Prelude/Stream.idr"
+           , "Prelude/Strings.idr"
+           , "Prelude/Traversable.idr"
+           , "Prelude/Uninhabited.idr"
+           , "Prelude/WellFounded.idr"
+           ],
+    visibility = ["//visibility:public"],
+)
